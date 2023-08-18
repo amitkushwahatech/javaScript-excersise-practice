@@ -39,6 +39,90 @@ const people = [
 // console.log(people.reduce((acc,curr) => ({...acc, [curr.department]: acc[curr.department]+1 || 1}),{}))
 
 
+///////////////////////////////////////////////////////////////
+
+
+const str= `avc,vac,sds
+dfg,hgf,ret
+ert,weq,nmv`;
+
+// console.log(str.split('\n').map(i=>i.split(',')))
+
+const gen = ()=>{
+    return Math.floor(Math.random()*16).toString(16)
+}
+
+const getRan = ()=>{
+    return '#' + Array.from({length : 6}).map(gen).join('')
+}
+// console.log(getRan())
+
+/////////////////////////////////////////////////////////
+//sort the string increasing order
+const t = "qwadsgfsds";
+
+// console.log(t.split('').sort((a,b)=>a>b?1:-1).join(''))
+
+///////////////////////////////////////////////////////
+
+//count vowels in string
+
+const st = "avsdaseioyudcsa";
+const chk = (str,letter=['a','e','i','o','u'])=>{
+    return str.split('').filter(i=> letter.indexOf(i)>-1).length
+}
+// console.log(chk(st))
+
+////////////////////////////////////////////////////////
+
+//count number in string
+
+const s = "a234a";
+const ch = (str)=>{
+    return str.split('').filter(i=> !isNaN(i)&& i%2==0).length
+}
+// console.log(ch(s))
+
+/////////////////////////////////////////////////////
+
+const coin = (n,lcoin=[25,10,10,5,1])=>{
+    
+    let c = [];
+    for(let i=0;i<lcoin.length;i++){
+        let r = Math.floor(n/lcoin[i]);
+        for(let j=0;j<r;j++){
+            c.push(lcoin[i]);
+        }
+        n -=r*lcoin[i];
+    }
+    return c;
+}
+
+// console.log(coin(46));
+// console.log(coin(446));
+// console.log(coin(146));
+// console.log(coin(460));
+// console.log(coin(13));
+// console.log(coin(9));
+
+//////////////////////////////////////////////////
+
+// get unique char from string
+
+const getUniq = (st)=>{
+    return st.split('').filter((item,index,arr)=> {
+      return  arr.slice(index+1).indexOf(item)===-1
+    })
+}
+
+const s1 = (str)=>{
+    return [...new Set(str.split(''))];
+}
+console.log(getUniq('aaaasada'))
+console.log(s1('aaaasada'))
+
+
+
 
 
 
